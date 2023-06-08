@@ -1,1 +1,1 @@
-# docker-boilerplate
+# Boilerplate Python + Docker
