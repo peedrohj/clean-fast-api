@@ -27,7 +27,10 @@
 	"extensions": [
 		"ms-python.python",
 		"SonarSource.sonarlint-vscode",
-		"vivaxy.vscode-conventional-commits"
+		"vivaxy.vscode-conventional-commits",
+		"ms-python.black-formatter",
+		"ms-python.pylint",
+		"ms-python.isort"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

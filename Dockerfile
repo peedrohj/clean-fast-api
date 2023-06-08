@@ -21,18 +21,17 @@ RUN mkdir -p /usr/share/man/man1 \
 
 # Create python user 
 RUN useradd -ms /bin/bash -u ${UID} python
-WORKDIR /home/python/app
+WORKDIR /home/python/app/code
 USER python
 
 # Install pdm
 RUN pip install -U pdm
-RUN pdm --pep582 >> ~/.bash_profile
 
 # Define environment variables
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
-ENV MY_PYTHON_PACKAGES="/home/python/app/code/__pypackages__/3.9"
+ENV MY_PYTHON_PACKAGES="/home/python/app/code/__pypackages__/3.10"
 ENV PYTHONPATH="${PYTHONPATH}:${MY_PYTHON_PACKAGES}/bin:${MY_PYTHON_PACKAGES}/lib:/home/python/app/code"
 ENV PATH="${PATH}:${MY_PYTHON_PACKAGES}/bin:/home/python/.local/bin"
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64

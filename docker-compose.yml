@@ -8,12 +8,12 @@ services:
         UID: $UID
     container_name: app
     image: app
-    command: ./.docker/entrypoint.sh
+    command: make run-dev
     volumes:
       - static-data:/vol/web
       - .:/home/python/app
     ports:
-      - 8000:8000
+      - 5000:5000
     depends_on:
       - db
 
